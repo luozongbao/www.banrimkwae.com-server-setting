@@ -3,3 +3,4 @@ database/*
 .env
 *.bak
 *.old
+*.com.conf
