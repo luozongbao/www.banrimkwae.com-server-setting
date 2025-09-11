@@ -1,0 +1,4 @@
+nginx/
+.env
+database/
+dockerfile

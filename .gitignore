@@ -1,0 +1,5 @@
+www/*
+database/*
+.env
+*.bak
+*.old
