@@ -8,7 +8,7 @@ services:
       - 443:443
     volumes:
       - ./www/:/var/www/html:rw
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx.conf.d/www.banrimkwae.com.conf:/etc/nginx/conf.d/default.conf:ro
     depends_on:
       - db
       - php
@@ -22,6 +22,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./www/:/var/www/html
+      - ./php.conf.d/php.conf:/usr/local/etc/php-fpm.d/www.conf
     environment:
       - WORDPRESS_DB_HOST=db
       - WORDPRESS_DB_NAME=${DATABASENAME}
@@ -43,6 +44,7 @@ services:
       - MYSQL_ROOT_PASSWORD=rootpassword
     volumes:
       - brk_data:/var/lib/mysql
+      - ./mariadb.conf.d/my.conf:/etc/mysql/conf.d/my.cnf
       - ./database:/docker-entrypoint-initdb.d
     networks:
       - brk-network

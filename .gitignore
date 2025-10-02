@@ -4,3 +4,6 @@ database/*
 *.bak
 *.old
 *.com.conf
+
+latest.zip
+wordpress.zip
